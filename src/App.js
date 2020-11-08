@@ -54,11 +54,9 @@ class App extends Component {
         if (this.state.showPersons) {
             persons = (
                 <div>
-                    <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
-                    <Person change={this.nameChangedHandler} name={this.state.persons[1].name}
-                            age={this.state.persons[1].age}/>
-                    <Person clickMe={this.switchNameHandler.bind(this, 'Bilal')} name={this.state.persons[2].name}
-                            age={this.state.persons[2].age}/>
+                    {this.state.persons.map((person, index) =>
+                        (<Person key={index} name={person.name} age={person.age}/>)
+                    )}
                 </div>
             );
         }
