@@ -6,9 +6,9 @@ import Person from "./Person/Person";
 class App extends Component {
     state = {
         persons: [
-            {name: 'Max', age: 28},
-            {name: 'Biden', age: 40},
-            {name: 'Trump', age: 50}
+            {id: '001', name: 'Ahamed', age: 28},
+            {id: '002', name: 'Ado No', age: 40},
+            {id: '003', name: 'Trump', age: 50}
         ],
         otherState: 'Nothing here',
         showPersons: false,
@@ -63,7 +63,7 @@ class App extends Component {
                     {this.state.persons.map((person, index) =>
                         (<Person
                             // by adding a key detect the changed elements and Only rerender them, Improve speed
-                            key={index}
+                            key={person.id}
                             click={() => this.deletePersonHandler(index)}
                             name={person.name}
                             age={person.age}/>)
