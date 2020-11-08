@@ -11,7 +11,7 @@ class App extends Component {
                     ratione suscipit tenetur? Alias, assumenda cum eum expedita facilis modi nihil possimus quas
                     quibusdam, sapiente similique velit?</p>
                 <Person name="Joe" age="28"/>
-                <Person name="Biden" age="14"/>
+                <Person name="Biden" age="14">My Hobbies: Reading</Person>
                 <Person name="Trump" age="50"/>
             </div>
         )
