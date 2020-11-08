@@ -6,9 +6,13 @@ class App extends Component {
     state = {
         persons: [
             {name: 'Max', age: 28},
-            {name:'Biden', age: 40},
+            {name: 'Biden', age: 40},
             {name: 'Trump', age: 50}
         ]
+    }
+
+    switchNameHandler = () => {
+        console.log('Clicked!');
     }
 
     render() {
@@ -18,7 +22,7 @@ class App extends Component {
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae dolorum facere illum,
                     ratione suscipit tenetur? Alias, assumenda cum eum expedita facilis modi nihil possimus quas
                     quibusdam, sapiente similique velit?</p>
-                <button>Switch Name</button>
+                <button onClick={this.switchNameHandler}>Switch Name</button>
                 <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
                 <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
                 <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
