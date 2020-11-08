@@ -11,6 +11,8 @@ class App extends Component {
                     ratione suscipit tenetur? Alias, assumenda cum eum expedita facilis modi nihil possimus quas
                     quibusdam, sapiente similique velit?</p>
                 <Person/>
+                <Person/>
+                <Person/>
             </div>
         )
         // same
