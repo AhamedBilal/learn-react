@@ -1,6 +1,7 @@
 import './App.css';
 import React, {Component} from 'react';
 import Person from "./Person/Person";
+
 // stateful
 class App extends Component {
     state = {
@@ -9,7 +10,8 @@ class App extends Component {
             {name: 'Biden', age: 40},
             {name: 'Trump', age: 50}
         ],
-        otherState: 'Nothing here'
+        otherState: 'Nothing here',
+        showPersons: false,
     }
 
     switchNameHandler = (newName) => {
@@ -33,6 +35,12 @@ class App extends Component {
             ]
         })
     }
+    togglePersonsHandler = () => {
+        const show = !this.state.showPersons;
+        this.setState({
+            showPersons: show
+        })
+    };
 
     render() {
         const style = {
@@ -48,10 +56,16 @@ class App extends Component {
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae dolorum facere illum,
                     ratione suscipit tenetur? Alias, assumenda cum eum expedita facilis modi nihil possimus quas
                     quibusdam, sapiente similique velit?</p>
-                <button style={style} onClick={() => this.switchNameHandler('Ahmed')}>Switch Name</button>
-                <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
-                <Person change={this.nameChangedHandler} name={this.state.persons[1].name} age={this.state.persons[1].age}/>
-                <Person clickMe={this.switchNameHandler.bind(this, 'Bilal')} name={this.state.persons[2].name} age={this.state.persons[2].age}/>
+                <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
+                {this.state.showPersons ?
+                    <div>
+                        <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
+                        <Person change={this.nameChangedHandler} name={this.state.persons[1].name}
+                                age={this.state.persons[1].age}/>
+                        <Person clickMe={this.switchNameHandler.bind(this, 'Bilal')} name={this.state.persons[2].name}
+                                age={this.state.persons[2].age}/>
+                    </div>: null
+                }
             </div>
         )
         // same
