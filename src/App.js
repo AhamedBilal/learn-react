@@ -10,9 +10,9 @@ class App extends Component {
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae dolorum facere illum,
                     ratione suscipit tenetur? Alias, assumenda cum eum expedita facilis modi nihil possimus quas
                     quibusdam, sapiente similique velit?</p>
-                <Person/>
-                <Person/>
-                <Person/>
+                <Person name="Joe" age="28"/>
+                <Person name="Biden" age="14"/>
+                <Person name="Trump" age="50"/>
             </div>
         )
         // same

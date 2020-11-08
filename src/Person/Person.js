@@ -1,5 +1,4 @@
-const person = () => {
-    return <p>Im a Person!, Im {Math.floor(Math.random() * 30)} yrs old</p>
-    // one line expressions or functions
+const person = (props) => {
+    return <p>Im {props.name}!, Im {props.age} yrs old</p>
 }
 export default person;
