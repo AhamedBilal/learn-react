@@ -1,7 +1,8 @@
+import './Person.css';
 //functions are stateless
 const person = (props) => {
     return (
-        <div>
+        <div className='Person'>
             <p onClick={props.clickMe}>Im {props.name}!, Im {props.age} yrs old</p>
             <p>{props.children}</p>
             <input type="text" onChange={props.change} value={props.name}/>
