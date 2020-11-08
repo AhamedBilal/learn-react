@@ -42,8 +42,8 @@ class App extends Component {
         })
     };
     deletePersonHandler = (personIndex) => {
-        // const persons = [...this.state.persons];
-        const persons = this.state.persons.slice();
+        const persons = [...this.state.persons];
+        // const persons = this.state.persons.slice();
         persons.splice(personIndex, 1);
         this.setState({persons: persons})
     };
@@ -62,6 +62,7 @@ class App extends Component {
                 <div>
                     {this.state.persons.map((person, index) =>
                         (<Person
+                            // by adding a key detect the changed elements and Only rerender them, Improve speed
                             key={index}
                             click={() => this.deletePersonHandler(index)}
                             name={person.name}
