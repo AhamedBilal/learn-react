@@ -1,19 +1,20 @@
 import './App.css';
 import React, {Component} from 'react';
 import Person from "./Person/Person";
-
+// stateful
 class App extends Component {
     state = {
         persons: [
             {name: 'Max', age: 28},
             {name: 'Biden', age: 40},
             {name: 'Trump', age: 50}
-        ]
+        ],
+        otherState: 'Nothing here'
     }
 
     switchNameHandler = () => {
         // console.log('Clicked!');
-        // avoid this  this.state.persons[0].name = "Bilal";
+        // avoid this --> this.state.persons[0].name = "Bilal";
         this.setState({
             persons: [
                 {name: 'Ahamed', age: 28},

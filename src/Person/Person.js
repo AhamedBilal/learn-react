@@ -1,3 +1,4 @@
+//functions are stateless
 const person = (props) => {
     return (
         <div>
