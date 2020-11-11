@@ -73,12 +73,17 @@ class App extends Component {
                 </div>
             );
         }
+        let classes = [];
+        if(this.state.persons.length <= 2) {
+            classes.push('red')
+        }
+        if (this.state.persons.length <= 1) {
+            classes.push('bold');
+        }
         return (
             <div className="App">
                 <h1>Hi, Im a React App!!</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae dolorum facere illum,
-                    ratione suscipit tenetur? Alias, assumenda cum eum expedita facilis modi nihil possimus quas
-                    quibusdam, sapiente similique velit?</p>
+                <p className={classes.join(' ')}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae dolorum facere illum</p>
                 <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
                 {persons}
             </div>
