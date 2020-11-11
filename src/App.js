@@ -49,14 +49,16 @@ class App extends Component {
 
     render() {
         const style = {
-            backgroundColor: 'white',
+            backgroundColor: 'green',
             font: 'inherits',
+            color: 'white',
             border: '1px solid blue',
             padding: '8px',
             cursor: 'pointer'
         };
         let persons = null;
         if (this.state.showPersons) {
+            style.backgroundColor = 'red';
             persons = (
                 <div>
                     {this.state.persons.map((person, index) =>
