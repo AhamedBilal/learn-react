@@ -1,7 +1,7 @@
 import './App.css';
 import React, {Component} from 'react';
 import Person from "./Person/Person";
-import Radium from 'radium';
+import Radium, {StyleRoot} from 'radium';
 
 // stateful
 class App extends Component {
@@ -80,19 +80,22 @@ class App extends Component {
             );
         }
         let classes = [];
-        if(this.state.persons.length <= 2) {
+        if (this.state.persons.length <= 2) {
             classes.push('red')
         }
         if (this.state.persons.length <= 1) {
             classes.push('bold');
         }
         return (
-            <div className="App">
-                <h1>Hi, Im a React App!!</h1>
-                <p className={classes.join(' ')}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae dolorum facere illum</p>
-                <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
-                {persons}
-            </div>
+            <StyleRoot>
+                <div className="App">
+                    <h1>Hi, Im a React App!!</h1>
+                    <p className={classes.join(' ')}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
+                        beatae dolorum facere illum</p>
+                    <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
+                    {persons}
+                </div>
+            </StyleRoot>
         )
         // same
         //return React.createElement('div', {className: 'App'},React.createElement('h1', null, 'Hi, Im a React App!!'))
