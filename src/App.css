@@ -1,6 +1,3 @@
-.App {
-  text-align: center;
-}
 
 .App-logo {
   height: 40vmin;
@@ -35,10 +32,4 @@
   to {
     transform: rotate(360deg);
   }
-}
-.red {
-  color: red;
-}
-.bold {
-  font-weight: bolder;
 }

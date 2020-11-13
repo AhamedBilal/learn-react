@@ -1,4 +1,5 @@
 import './App.css';
+import classes from './App.module.css';
 import React, {Component} from 'react';
 import Person from "./Person/Person";
 
@@ -48,14 +49,6 @@ class App extends Component {
     };
 
     render() {
-        const style = {
-            backgroundColor: 'green',
-            font: 'inherits',
-            color: 'white',
-            border: '1px solid blue',
-            padding: '8px',
-            cursor: 'pointer',
-        };
         let persons = null;
         if (this.state.showPersons) {
             style.backgroundColor = 'red';
