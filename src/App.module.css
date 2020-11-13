@@ -9,7 +9,6 @@
 }
 .App button {
     background-color: green;
-    font: inherits;
     color: white;
     border: 1px solid blue;
     padding: 8px;
