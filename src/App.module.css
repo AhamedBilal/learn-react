@@ -15,10 +15,13 @@
     cursor: pointer;
 }
 .App button:hover {
-    background-color: green;
-    font: inherit;
+    background-color: lightgreen;
     color: white;
-    border: 1px solid blue;
-    padding: 8px;
-    cursor: pointer;
+}
+.App button.red {
+    background-color: red;
+}
+.App button.red:hover {
+    background-color: lightcoral;
+    color: white;
 }

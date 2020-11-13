@@ -50,6 +50,7 @@ class App extends Component {
 
     render() {
         let persons = null;
+        let btnClass = '';
         if (this.state.showPersons) {
             // style.backgroundColor = 'red';
             persons = (
@@ -65,20 +66,21 @@ class App extends Component {
                     )}
                 </div>
             );
+            btnClass = styles.red;
         }
         let classes = [];
         if (this.state.persons.length <= 2) {
-            classes.push('red')
+            classes.push(styles.red)
         }
         if (this.state.persons.length <= 1) {
-            classes.push('bold');
+            classes.push(styles.bold);
         }
         return (
             <div className={styles.App}>
                 <h1>Hi, Im a React App!!</h1>
                 <p className={classes.join(' ')}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
                     beatae dolorum facere illum</p>
-                <button onClick={this.togglePersonsHandler}>Toggle Persons</button>
+                <button className={btnClass} onClick={this.togglePersonsHandler}>Toggle Persons</button>
                 {persons}
             </div>
         )
