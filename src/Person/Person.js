@@ -1,7 +1,8 @@
 import './Person.css';
-import React from 'react';
+import  React from 'react';
 //functions are stateless
 const person = (props) => {
+
     return (
         <div className='Person'>
             <p onClick={props.click}>Im {props.name}!, Im {props.age} yrs old</p>
