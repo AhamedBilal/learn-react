@@ -12,6 +12,14 @@ class App extends Component {
         console.log('[App.js component const]', props);
     }
 
+    UNSAFE_componentWillMount() {
+        console.log('Component wil mount');
+    }
+
+    componentDidMount() {
+        console.log('Component Did mount, Rendered');
+    }
+
     state = {
         persons: [
             {id: '001', name: 'Ahamed', age: 28},
@@ -56,6 +64,7 @@ class App extends Component {
     };
 
     render() {
+        console.log('Rendering')
         let persons = null;
         if (this.state.showPersons) {
             // style.backgroundColor = 'red';
