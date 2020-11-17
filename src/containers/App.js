@@ -1,8 +1,8 @@
 import './App.css';
 import styles from './App.module.css';
 import React, {Component} from 'react';
-import Person from "../components/Persons/Person/Person";
 import Persons from "../components/Persons/Persons";
+import Cockpit from "../components/Cockpit/Cockpit";
 
 // stateful
 class App extends Component {
@@ -51,27 +51,18 @@ class App extends Component {
 
     render() {
         let persons = null;
-        let btnClass = '';
         if (this.state.showPersons) {
             // style.backgroundColor = 'red';
-            btnClass = styles.red;
-            persons = (
-                <Persons persons={this.state.persons} click={this.deletePersonHandler}/>
-            )
+            persons = <Persons persons={this.state.persons}
+                               click={this.deletePersonHandler}
+                               changed={this.nameChangedHandler}/>;
         }
-        let classes = [];
-        if (this.state.persons.length <= 2) {
-            classes.push(styles.red)
-        }
-        if (this.state.persons.length <= 1) {
-            classes.push(styles.bold);
-        }
+
         return (
             <div className={styles.App}>
-                <h1>Hi, Im a React App!!</h1>
-                <p className={classes.join(' ')}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                    beatae dolorum facere illum</p>
-                <button className={btnClass} onClick={this.togglePersonsHandler}>Toggle Persons</button>
+                <Cockpit click={this.togglePersonsHandler}
+                         persons={this.state.persons}
+                         showPersons={this.state.showPersons}>Hi, Im a React App!!</Cockpit>
                 {persons}
             </div>
         )
