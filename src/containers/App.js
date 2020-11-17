@@ -6,6 +6,12 @@ import Cockpit from "../components/Cockpit/Cockpit";
 
 // stateful
 class App extends Component {
+
+    constructor(props) {
+        super(props);
+        console.log('[App.js component const]', props);
+    }
+
     state = {
         persons: [
             {id: '001', name: 'Ahamed', age: 28},
@@ -62,7 +68,7 @@ class App extends Component {
             <div className={styles.App}>
                 <Cockpit click={this.togglePersonsHandler}
                          persons={this.state.persons}
-                         showPersons={this.state.showPersons}>Hi, Im a React App!!</Cockpit>
+                         showPersons={this.state.showPersons}>{this.props.title}</Cockpit>
                 {persons}
             </div>
         )
