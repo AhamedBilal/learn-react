@@ -1,7 +1,8 @@
 import './App.css';
 import styles from './App.module.css';
 import React, {Component} from 'react';
-import Person from "./Person/Person";
+import Person from "../components/Persons/Person/Person";
+import Persons from "../components/Persons/Persons";
 
 // stateful
 class App extends Component {
@@ -53,20 +54,10 @@ class App extends Component {
         let btnClass = '';
         if (this.state.showPersons) {
             // style.backgroundColor = 'red';
-            persons = (
-                <div>
-                    {this.state.persons.map((person, index) =>
-                        (<Person
-                            // by adding a key detect the changed elements and Only rerender them, Improve speed
-                            key={person.id}
-                            click={() => this.deletePersonHandler(index)}
-                            name={person.name}
-                            age={person.age}
-                            change={(event) => this.nameChangedHandler(event, person.id)}/>)
-                    )}
-                </div>
-            );
             btnClass = styles.red;
+            persons = (
+                <Persons persons={this.state.persons} click={this.deletePersonHandler}/>
+            )
         }
         let classes = [];
         if (this.state.persons.length <= 2) {
