@@ -5,6 +5,7 @@ import Persons from "../components/Persons/Persons";
 import Cockpit from "../components/Cockpit/Cockpit";
 
 // stateful
+
 class App extends Component {
 
     constructor(props) {
