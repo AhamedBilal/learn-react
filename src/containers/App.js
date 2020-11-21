@@ -1,12 +1,12 @@
 import './App.css';
 import styles from './App.module.css';
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import Persons from "../components/Persons/Persons";
 import Cockpit from "../components/Cockpit/Cockpit";
 
 // stateful
 
-class App extends Component {
+class App extends PureComponent {
 
     constructor(props) {
         super(props);
