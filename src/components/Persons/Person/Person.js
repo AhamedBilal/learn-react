@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import withClass from "../../../hoc/withClass";
 import styles from "../../../containers/App.module.css";
 import Auxx from "../../../hoc/Auxx";
+import PropTypes from 'prop-types';
+
 //functions are stateless
 class Person extends Component {
     render() {
@@ -15,4 +17,12 @@ class Person extends Component {
         );
     }
 }
+
+Person.propTypes = {
+    click: PropTypes.func,
+    name: PropTypes.string,
+    age: PropTypes.number,
+    change: PropTypes.func
+}
+
 export default withClass(Person, styles.Person);
