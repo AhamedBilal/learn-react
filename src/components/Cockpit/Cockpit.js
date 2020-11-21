@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './Cockpit.module.css'
+import Auxx from "../../hoc/Auxx";
 
 const cockpit = (props) => {
     let classes = [];
-    let btnClass = '';
+    let btnClass = styles.Button;
 
     if (props.persons.length <= 2) {
         classes.push(styles.red)
@@ -12,16 +13,16 @@ const cockpit = (props) => {
         classes.push(styles.bold);
     }
     if (props.showPersons) {
-        btnClass = styles.red;
+        btnClass = [styles.red, styles.Button].join(' ');
     }
 
     return(
-        <div className={styles.Cockpit}>
+        <Auxx>
             <h1>{props.children}</h1>
             <p className={classes.join(' ')}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
                 beatae dolorum facere illum</p>
             <button className={btnClass} onClick={props.click}>Toggle Persons</button>
-        </div>
+        </Auxx>
     )
 }
 export default cockpit;
