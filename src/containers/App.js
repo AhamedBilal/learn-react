@@ -3,7 +3,6 @@ import styles from './App.module.css';
 import React, {PureComponent} from 'react';
 import Persons from "../components/Persons/Persons";
 import Cockpit from "../components/Cockpit/Cockpit";
-import WithClass from "../hoc/withClass";
 import Auxx from "../hoc/Auxx";
 import withClass from "../hoc/withClass";
 
