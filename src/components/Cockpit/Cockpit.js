@@ -17,6 +17,7 @@ const cockpit = (props) => {
     }
 
     return(
+        // hoc
         <Auxx>
             <h1>{props.children}</h1>
             <p className={classes.join(' ')}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias

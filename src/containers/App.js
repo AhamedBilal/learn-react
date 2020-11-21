@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import React, {PureComponent} from 'react';
 import Persons from "../components/Persons/Persons";
 import Cockpit from "../components/Cockpit/Cockpit";
+import WithClass from "../hoc/WithClass";
 
 // stateful
 
@@ -75,12 +76,12 @@ class App extends PureComponent {
         }
 
         return (
-            <div className={styles.App}>
+            <withClass classes={styles.App}>
                 <Cockpit click={this.togglePersonsHandler}
                          persons={this.state.persons}
                          showPersons={this.state.showPersons}>{this.props.title}</Cockpit>
                 {persons}
-            </div>
+            </withClass>
         )
         // same
         //return React.createElement('div', {className: 'App'},React.createElement('h1', null, 'Hi, Im a React App!!'))
