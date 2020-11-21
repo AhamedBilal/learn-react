@@ -7,12 +7,26 @@ import PropTypes from 'prop-types';
 
 //functions are stateless
 class Person extends Component {
+
+    componentDidMount() {
+        console.log('Person JS did mount')
+        if (this.props.position === 0) {
+            this.inputElement.focus();
+        }
+    }
+
     render() {
         return (
             <Auxx>
                 <p onClick={this.props.click}>Im {this.props.name}!, Im {this.props.age} yrs old</p>
                 <p>{this.props.children}</p>
-                <input type="text" onChange={this.props.change} value={this.props.name}/>
+                <input
+                    ref={(inp) => {
+                        this.inputElement = inp
+                    }}
+                    type="text"
+                    onChange={this.props.change}
+                    value={this.props.name}/>
             </Auxx>
         );
     }

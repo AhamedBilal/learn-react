@@ -5,6 +5,7 @@ const persons = (props) => (props.persons.map((person, index) =>
                 (<Person
                     // by adding a key detect the changed elements and Only rerender them, Improve speed
                     key={person.id}
+                    position={index}
                     click={() => props.click(index)}
                     name={person.name}
                     age={person.age}
