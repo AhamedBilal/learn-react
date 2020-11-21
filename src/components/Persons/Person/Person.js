@@ -1,14 +1,18 @@
 import './Person.css';
-import  React from 'react';
+import React, {Component} from 'react';
+import withClass from "../../../hoc/withClass";
+import styles from "../../../containers/App.module.css";
+import Auxx from "../../../hoc/Auxx";
 //functions are stateless
-const person = (props) => {
-
-    return (
-        <div className='Person'>
-            <p onClick={props.click}>Im {props.name}!, Im {props.age} yrs old</p>
-            <p>{props.children}</p>
-            <input type="text" onChange={props.change} value={props.name}/>
-        </div>
-    )
+class Person extends Component {
+    render() {
+        return (
+            <Auxx>
+                <p onClick={this.props.click}>Im {this.props.name}!, Im {this.props.age} yrs old</p>
+                <p>{this.props.children}</p>
+                <input type="text" onChange={this.props.change} value={this.props.name}/>
+            </Auxx>
+        );
+    }
 }
-export default person;
+export default withClass(Person, styles.Person);
