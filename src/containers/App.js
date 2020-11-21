@@ -76,12 +76,12 @@ class App extends PureComponent {
         }
 
         return (
-            <withClass classes={styles.App}>
+            <WithClass classes={styles.App}>
                 <Cockpit click={this.togglePersonsHandler}
                          persons={this.state.persons}
                          showPersons={this.state.showPersons}>{this.props.title}</Cockpit>
                 {persons}
-            </withClass>
+            </WithClass>
         )
         // same
         //return React.createElement('div', {className: 'App'},React.createElement('h1', null, 'Hi, Im a React App!!'))
